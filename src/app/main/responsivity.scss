@@ -1,0 +1,56 @@
+@import '../../variables/variables.scss';
+
+@media (width >=1024px) {
+    .about {
+        display: flex;
+        flex-direction: row !important;
+        padding: 5dvh 5dvh;
+
+        div {
+            flex: 1;
+        }
+    }
+}
+
+@media (width >=1024px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 3dvh;
+
+        .card {
+            display: flex;
+            flex-direction: row !important;
+            height: 40dvh;
+
+            .card-img {
+                img {
+                    height: 40dvh;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+
+}
+
+@media (width >=1024px) {
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 3dvh;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+
+            div {
+                flex: 1;
+            }
+
+            .card-img {
+                margin-bottom: 3dvh;
+            }
+        }
+    }
+}

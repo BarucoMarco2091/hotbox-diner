@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@media (width >= 1024px) {
+  .about {
+    display: flex;
+    flex-direction: row !important;
+    padding: 5dvh 5dvh;
+  }
+  .about div {
+    flex: 1;
+  }
+}
+@media (width >= 1024px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3dvh;
+  }
+  .grid .card {
+    display: flex;
+    flex-direction: row !important;
+    height: 40dvh;
+  }
+  .grid .card .card-img img {
+    height: 40dvh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+@media (width >= 1024px) {
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 3dvh;
+  }
+  .grid-container .card {
+    display: flex;
+    flex-direction: column;
+  }
+  .grid-container .card div {
+    flex: 1;
+  }
+  .grid-container .card .card-img {
+    margin-bottom: 3dvh;
+  }
+}/*# sourceMappingURL=responsivity.css.map */

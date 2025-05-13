@@ -1,0 +1,12 @@
+@import '../../variables/variables.scss';
+
+@media (width >= 1024px) {
+    nav {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        max-width: 1240px;
+        margin: auto;
+        padding: 5dvh 5dvh;
+    }
+}

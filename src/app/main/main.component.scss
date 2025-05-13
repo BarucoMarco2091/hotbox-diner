@@ -1,0 +1,186 @@
+@import '../../app/main/responsivity.scss';
+@import '../../variables/variables.scss';
+
+main {
+    max-width: 1240px;
+    margin: auto;
+
+    .about {
+        display: flex;
+        flex-direction: column;
+
+        .our-history {
+            text-align: center;
+            margin-right: 3dvh;
+
+            h2 {
+                margin-bottom: 2dvh;
+                font-weight: 600;
+            }
+
+            p {
+                line-height: 2rem;
+            }
+        }
+
+        img {
+            filter: brightness(50%);
+        }
+    }
+
+    .menu {
+
+        h2 {
+            margin: 5dvh 5dvh;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            padding: 1dvh 1dvh;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+                border-radius: 2dvh;
+                overflow: hidden;
+
+                div {
+                    flex: 1;
+                }
+
+                .card-img {
+
+                    img {
+                        filter: brightness(60%);
+                        transition: transform .9s;
+                    }
+
+                    img:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .card-body {
+                    text-align: center;
+                    margin-left: 3dvh;
+
+                    .card-title {
+                        margin: 2dvh 2dvh;
+                        font-weight: 600;
+                        color: $red;
+                    }
+
+                    .card-description {
+                        line-height: 1.5rem;
+                        margin-top: 2dvh;
+                    }
+
+                    .card-info {
+                        display: flex;
+                        justify-content: space-between;
+                        margin-top: 2dvh;
+
+                        .card-price {
+                            color: $red;
+                            font-weight: 600;
+                        }
+
+                        .add-to-cart-btn {
+                            background-color: $black;
+                            border: none;
+                            color: $white;
+                            margin-right: 2dvh;
+                            height: 6dvh;
+                            width: 6dvh;
+                            transition: background-color .9s;
+                        }
+
+                        .add-to-cart-btn:hover {
+                            background-color: $yellow;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-btn-container {
+            display: flex;
+            justify-content: center;
+
+            .menu-btn {
+                background-color: $red;
+                border: none;
+                border-radius: 2dvh;
+                color: $white;
+                height: 5dvh;
+                width: 35dvh;
+                margin-top: 5dvh;
+                transition: opacity .9s;
+            }
+
+            .menu-btn:hover {
+                opacity: 50%;
+            }
+        }
+    }
+
+    .testimonials {
+
+        h2 {
+            font-weight: 600;
+            text-align: center;
+            margin: 5dvh 5dvh;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            .card {
+                display: flex;
+                flex-direction: column;
+                box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+                border-radius: 2dvh;
+                overflow: hidden;
+
+                div {
+                    flex: 1;
+                }
+
+                .card-img {
+
+                    img {
+                        filter: brightness(60%);
+                        transition: transform .9s;
+                    }
+
+                    img:hover {
+                        transform: scale(1.1);
+                    }
+                }
+
+                .card-body {
+
+                    p {
+                        text-align: center;
+                        line-height: 1.5rem;
+                    }
+                }
+            }
+        }
+
+    }
+
+    .location {
+
+        h2 {
+            font-weight: 600;
+            text-align: center;
+            margin: 5dvh 5dvh;
+        }
+    }
+}

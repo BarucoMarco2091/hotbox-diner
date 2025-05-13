@@ -1,0 +1,57 @@
+<main>
+    <section class="menu">
+        <h2>Conheça nosso cardápio</h2>
+        <div class="grid">
+            <div *ngFor="let item of menuItems" class="card">
+                <div class="card-img">
+                    <img [src]="item.image" [alt]="item.name" loading="lazy">
+                </div>
+                <div class="card-body">
+                    <span class="card-description" [attr.data-name]="item.name">{{ item.name }}</span>
+                    <p class="card-paragraph">{{ item.description }}</p>
+                    <div class="card-info">
+                        <p class="card-price" [attr.data-price]="item.price">R$ {{ item.price.toFixed(2) }}</p>
+                        <button class="add-to-cart-btn" (click)="addToCart(item.name, item.price)">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div>
+        <div class="cart-modal-button">
+            <button id="cart-btn" (click)="openModal()">(<span #cartCounter>{{ cart.length }}</span>) Veja seu
+                carrinho</button>
+        </div>
+        <div class="fullscreen" [style.display]="isModalOpen ? 'block' : 'none'">
+            <div class="carrinho">
+                <h2>Meu carrinho</h2>
+                <div id="cart-items-container" #cartItemsContainer>
+                    <div *ngFor="let item of cart" class="cart-item">
+                        <div
+                            style="display: flex; justify-content: space-between; max-height: 400px; overflow-y: auto;">
+                            <div>
+                                <p>{{ item.name }}</p>
+                                <p>Qtd: {{ item.quantity }}</p>
+                                <p>R$ {{ item.price.toFixed(2) }}</p>
+                            </div>
+                            <div>
+                                <button class="remove-from-cart-btn"
+                                    (click)="removeItemCart(item.name)">Remover</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p>Total: <span>{{ total | currency: 'BRL' }}</span></p>
+                <p>Endereço de entrega:</p>
+                <input id="address" type="text" [(ngModel)]="address" placeholder="Digite seu endereço completo">
+                <div *ngIf="showAddressWarning">Digite seu endereço completo!</div>
+                <div>
+                    <button class="close-modal-btn" (click)="closeModal()">Fechar</button>
+                    <button class="checkout-btn" (click)="checkout()">Finalizar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

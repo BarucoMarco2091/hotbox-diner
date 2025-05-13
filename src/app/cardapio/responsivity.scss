@@ -1,0 +1,22 @@
+@import '../../variables/variables.scss';
+
+@media (width >=1024px) {
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 3dvh;
+
+        .card {
+            display: flex;
+            flex-direction: row !important;
+            height: 40dvh;
+
+            .card-img {
+                img {
+                    height: 40dvh;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

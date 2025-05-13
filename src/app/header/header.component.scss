@@ -1,0 +1,83 @@
+@import '../header/responsivity.scss';
+@import '../../variables/variables.scss';
+
+@keyframes pulse {
+    from {
+        transform: translateY(0) scale(1);
+    }
+    to {
+        transform: translateY(-8px) scale(1.1);
+    }
+}
+
+header {
+    background-image: url('/bg\ \(1\).webp');
+    background-repeat: no-repeat;
+    height:60dvh;
+
+    nav {
+        display: flex;
+        flex-direction: column;
+
+        .nav-icons {
+
+            i {
+                margin-right: 3dvh;
+                transition: color .9s;
+            }
+
+            i:hover {
+                color: $yellow;
+                animation: pulse 1s infinite alternate;
+            }
+        }
+
+        .logo {
+            i {
+                font-size: 1.7rem;
+            }
+
+            span {
+                color: $white;
+                font-size: 1.7rem;
+            }
+        }
+
+        .nav-btn {
+
+            button {
+                background-color: transparent;
+                border: 1px solid $white;
+                border-radius: 2dvh;
+                width: 20dvh;
+                height: 5dvh;
+                transition: border .9s;
+            }
+
+            button:hover {
+                border: 2px solid $yellow;
+            }
+        }
+    }
+
+    .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0 auto;
+        text-align: center;
+        width: 50%;
+
+        h1, p {
+            color: $white;
+        }
+
+        span {
+            background-color: $green;
+            margin-top: 2dvh;
+            width: 40dvh;
+            height: 5dvh;
+        }
+    }
+}

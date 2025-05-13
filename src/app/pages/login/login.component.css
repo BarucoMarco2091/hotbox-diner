@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-self: center;
+  align-items: center;
+  box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+  height: 50dvh;
+  width: 50%;
+  margin: 3dvh;
+}
+.login-container input {
+  margin-top: 3dvh;
+  border: 1px solid #000000;
+  border-radius: 2dvh;
+  height: 5dvh;
+  width: 25dvh;
+}
+.login-container input::-moz-placeholder {
+  text-align: center;
+}
+.login-container input::placeholder {
+  text-align: center;
+}
+.login-container .login {
+  margin-top: 2dvh;
+  border: none;
+  border-radius: 2dvh;
+  width: 15dvh;
+  height: 5dvh;
+  background-color: #E53935;
+  color: #FFF8F5;
+  transition: background-color 1s;
+}
+.login-container .login:hover {
+  background-color: #FDD835;
+}/*# sourceMappingURL=login.component.css.map */

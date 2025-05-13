@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@keyframes scale {
+  from {
+    transform: scale(1) translateY(0);
+  }
+  to {
+    transform: scale(1.1) translateY(-8px);
+  }
+}
+footer {
+  background-color: #E53935;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5dvh;
+}
+footer .footer-icons i {
+  color: #FFF8F5;
+  transition: color 1s;
+  margin-right: 2dvh;
+  margin-top: 3dvh;
+}
+footer .footer-icons i:hover {
+  color: #FDD835;
+  animation: scale 1s infinite alternate;
+}
+footer .logo i, footer .logo span {
+  font-size: 1.7rem;
+  margin-top: 3dvh;
+}
+footer .logo span {
+  color: #FFF8F5;
+}
+footer .copyright {
+  color: #FFF8F5;
+  margin-top: 3dvh;
+}/*# sourceMappingURL=footer.component.css.map */

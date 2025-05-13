@@ -1,0 +1,207 @@
+@import '../cardapio/responsivity.scss';
+@import '../../variables/variables.scss';
+
+
+.menu {
+    max-width: 1240px;
+    margin: auto;
+
+    h2 {
+        text-align: center;
+        margin: 5dvh;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 1dvh 1dvh;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+            border-radius: 2dvh;
+            overflow: hidden;
+
+            div {
+                flex: 1;
+            }
+
+            .card-img {
+
+                img {
+                    filter: brightness(60%);
+                    transition: transform .9s;
+                }
+
+                img:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            .card-body {
+                text-align: center;
+                margin-left: 3dvh;
+
+                .card-description {
+                    margin: 2dvh 2dvh;
+                    font-weight: 600;
+                    color: $red;
+                }
+
+                .card-description {
+                    line-height: 1.5rem;
+                    margin-top: 2dvh;
+                }
+
+                .card-info {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-top: 2dvh;
+
+                    .card-price {
+                        color: $red;
+                        font-weight: 600;
+                    }
+
+                    .add-to-cart-btn {
+                        background-color: $black;
+                        border: none;
+                        color: $white;
+                        margin-right: 2dvh;
+                        height: 6dvh;
+                        width: 6dvh;
+                        transition: background-color .9s;
+                    }
+
+                    .add-to-cart-btn:hover {
+                        background-color: $yellow;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.cart-modal-button {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 2dvh;
+
+    #cart-btn {
+        width: 40dvh;
+        height: 5dvh;
+        border: 1px solid;
+        border-radius: 2dvh;
+        background-color: $red;
+        color: $white;
+        transition: background-color 1s;
+
+        span {
+            color: $white;
+        }
+    }
+
+    #cart-btn:hover {
+        background-color: $yellow;
+    }
+}
+
+.fullscreen {
+    position: fixed;
+    z-index: 20;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100dvh;
+    top: 0;
+    left: 0;
+    background-color: rgb(0 0 0 / 0.4);
+
+    .carrinho {
+        background-color: $white;
+        min-width: 90%;
+        border-radius: 2dvh;
+        text-align: center;
+        font-weight: bold;
+        margin: 1dvh 1dvh;
+
+        h2 {
+            margin-top: 1dvh;
+        }
+
+        #cart-items-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .cart-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            margin: 1dvh 1dvh;
+
+            .remove-from-cart-btn {
+                border: none;
+                transition: border .9s;
+                background-color: transparent;
+                color: $red;
+                transition: color 1s;
+            }
+
+            .remove-from-cart-btn:hover {
+                color: $yellow;
+            }
+        }
+
+        p {
+            font-weight: bold;
+            color: $black;
+        }
+
+        #address {
+            width: 90%;
+            padding: 1dvh 1dvh;
+            border: none;
+            border-radius: 1dvh;
+        }
+
+        #address-warn {
+            color: rgb(201, 62, 62);
+            font-weight: 500;
+            display: none;
+        }
+
+        div {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 1dvh;
+            gap: 3dvh;
+
+            .close-modal-btn {
+                border: none;
+                transition: color 1s;
+                color: $red;
+                background-color: transparent;
+            }
+
+            .close-modal-btn:hover {
+                color: $yellow;
+            }
+
+            .checkout-btn {
+                background-color: transparent;
+                color: $red;
+                padding: 1dvh 1dvh;
+                border: none;
+                transition: color 1s;
+            }
+
+            .checkout-btn:hover {
+                color: $yellow;
+            }
+        }
+    }
+}

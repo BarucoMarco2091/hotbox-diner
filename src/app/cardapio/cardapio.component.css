@@ -1,0 +1,191 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@media (width >= 1024px) {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 3dvh;
+  }
+  .grid .card {
+    display: flex;
+    flex-direction: row !important;
+    height: 40dvh;
+  }
+  .grid .card .card-img img {
+    height: 40dvh;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+.menu {
+  max-width: 1240px;
+  margin: auto;
+}
+.menu h2 {
+  text-align: center;
+  margin: 5dvh;
+}
+.menu .grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  padding: 1dvh 1dvh;
+}
+.menu .grid .card {
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+  border-radius: 2dvh;
+  overflow: hidden;
+}
+.menu .grid .card div {
+  flex: 1;
+}
+.menu .grid .card .card-img img {
+  filter: brightness(60%);
+  transition: transform 0.9s;
+}
+.menu .grid .card .card-img img:hover {
+  transform: scale(1.1);
+}
+.menu .grid .card .card-body {
+  text-align: center;
+  margin-left: 3dvh;
+}
+.menu .grid .card .card-body .card-description {
+  margin: 2dvh 2dvh;
+  font-weight: 600;
+  color: #E53935;
+}
+.menu .grid .card .card-body .card-description {
+  line-height: 1.5rem;
+  margin-top: 2dvh;
+}
+.menu .grid .card .card-body .card-info {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2dvh;
+}
+.menu .grid .card .card-body .card-info .card-price {
+  color: #E53935;
+  font-weight: 600;
+}
+.menu .grid .card .card-body .card-info .add-to-cart-btn {
+  background-color: #000000;
+  border: none;
+  color: #FFF8F5;
+  margin-right: 2dvh;
+  height: 6dvh;
+  width: 6dvh;
+  transition: background-color 0.9s;
+}
+.menu .grid .card .card-body .card-info .add-to-cart-btn:hover {
+  background-color: #FDD835;
+}
+
+.cart-modal-button {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin-top: 2dvh;
+}
+.cart-modal-button #cart-btn {
+  width: 40dvh;
+  height: 5dvh;
+  border: 1px solid;
+  border-radius: 2dvh;
+  background-color: #E53935;
+  color: #FFF8F5;
+  transition: background-color 1s;
+}
+.cart-modal-button #cart-btn span {
+  color: #FFF8F5;
+}
+.cart-modal-button #cart-btn:hover {
+  background-color: #FDD835;
+}
+
+.fullscreen {
+  position: fixed;
+  z-index: 20;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100dvh;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.fullscreen .carrinho {
+  background-color: #FFF8F5;
+  min-width: 90%;
+  border-radius: 2dvh;
+  text-align: center;
+  font-weight: bold;
+  margin: 1dvh 1dvh;
+}
+.fullscreen .carrinho h2 {
+  margin-top: 1dvh;
+}
+.fullscreen .carrinho #cart-items-container {
+  display: flex;
+  flex-direction: column;
+}
+.fullscreen .carrinho .cart-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  margin: 1dvh 1dvh;
+}
+.fullscreen .carrinho .cart-item .remove-from-cart-btn {
+  border: none;
+  transition: border 0.9s;
+  background-color: transparent;
+  color: #E53935;
+  transition: color 1s;
+}
+.fullscreen .carrinho .cart-item .remove-from-cart-btn:hover {
+  color: #FDD835;
+}
+.fullscreen .carrinho p {
+  font-weight: bold;
+  color: #000000;
+}
+.fullscreen .carrinho #address {
+  width: 90%;
+  padding: 1dvh 1dvh;
+  border: none;
+  border-radius: 1dvh;
+}
+.fullscreen .carrinho #address-warn {
+  color: rgb(201, 62, 62);
+  font-weight: 500;
+  display: none;
+}
+.fullscreen .carrinho div {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 1dvh;
+  gap: 3dvh;
+}
+.fullscreen .carrinho div .close-modal-btn {
+  border: none;
+  transition: color 1s;
+  color: #E53935;
+  background-color: transparent;
+}
+.fullscreen .carrinho div .close-modal-btn:hover {
+  color: #FDD835;
+}
+.fullscreen .carrinho div .checkout-btn {
+  background-color: transparent;
+  color: #E53935;
+  padding: 1dvh 1dvh;
+  border: none;
+  transition: color 1s;
+}
+.fullscreen .carrinho div .checkout-btn:hover {
+  color: #FDD835;
+}/*# sourceMappingURL=cardapio.component.css.map */
