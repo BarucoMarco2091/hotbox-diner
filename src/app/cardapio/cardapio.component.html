@@ -2,7 +2,7 @@
     <section class="menu">
         <h2>Conheça nosso cardápio</h2>
         <div class="grid">
-            <div *ngFor="let item of menuItems" class="card">
+            <div *ngFor="let item of cardapioService.menuItems" class="card">
                 <div class="card-img">
                     <img [src]="item.image" [alt]="item.name" loading="lazy">
                 </div>

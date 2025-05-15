@@ -1,0 +1,159 @@
+@import '../../../variables/variables.scss';
+@import '../admin/responsivity.scss';
+
+.admin-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1240px;
+    margin: auto;
+
+    .form-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            label {
+                font-family: 'Poppins', serif, Arial;
+                font-size: 1rem;
+            }
+
+            input {
+                height: 5dvh;
+                width: 30dvh;
+            }
+
+            textarea {
+                height: 20dvh;
+                width: 30dvh;
+            }
+        }
+
+        h3 {
+            margin: 2dvh 2dvh;
+        }
+
+        .add-btn {
+            margin-top: 2dvh;
+            border: none;
+            border-radius: 2dvh;
+            width: 35dvh;
+            height: 5dvh;
+            background-color: $red;
+            color: $white;
+            transition: background-color 1s;
+        }
+
+        .add-btn:hover {
+            background-color: $yellow;
+        }
+    }
+
+    .pasteis-list {
+        h3 {
+            font-family: 'Roboto', serif, Arial;
+            font-size: 2.5rem;
+            font-weight: 600;
+            color: $black;
+            margin: 3dvh 3dvh;
+            text-align: center;
+        }
+    }
+
+    .logout {
+        margin-top: 2dvh;
+        border: none;
+        border-radius: 2dvh;
+        width: 15dvh;
+        height: 5dvh;
+        background-color: $red;
+        color: $white;
+        transition: background-color 1s;
+    }
+
+    .logout:hover {
+        background-color: $yellow;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 2dvh;
+        padding: 1dvh 1dvh;
+
+        .card {
+            display: flex;
+            flex-direction: column;
+            box-shadow: 0px -1px 17px -4px rgba(0, 0, 0, 0.45);
+            border-radius: 2dvh;
+            overflow: hidden;
+
+            .card-img {
+                img {
+                    filter: brightness(50%);
+                    transition: transform 1s;
+                }
+
+                img:hover {
+                    transform: scale(1.1);
+                }
+            }
+
+            .card-body {
+                display: flex;
+                flex-direction: column;
+                margin-left: 3dvh;
+
+                .card-title {
+                    color: $red;
+                    font-size: 1.3rem;
+                    font-weight: 600;
+                    text-align: center;
+                    margin: 3dvh 3dvh;
+                }
+
+                .card-description {
+                    color: $black;
+                    text-align: center;
+                }
+
+                .card-info {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .card-price {
+                        color: $red;
+                        font-weight: 600;
+                    }
+
+                    .remove-btn {
+                        width: 15dvh;
+                        height: 5dvh;
+                        border: none;
+                        border-radius: 2dvh;
+                        background-color: $red;
+                        color: $white;
+                        margin-right: 2dvh;
+                        transition: background-color 1s;
+                    }
+
+                    .remove-btn:hover {
+                        background-color: $yellow;
+                    }
+                }
+            }
+        }
+
+        div {
+            flex: 1;
+        }
+    }
+}
