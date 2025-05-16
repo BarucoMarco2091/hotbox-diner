@@ -54,7 +54,7 @@ export class CardapioService {
         if(isPlatformBrowser(this.platformId)) {
             const salvos = localStorage.getItem(this.STORAGE_KEY);
             if(salvos) {
-                this._menuItems = JSON.parse(salvos)
+                this._menuItems = JSON.parse(salvos);
             }
         }
     }

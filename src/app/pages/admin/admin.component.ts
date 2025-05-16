@@ -41,5 +41,4 @@ export class AdminComponent {
   logout() {
     this.auth.logout();
   }
-
 }
