@@ -10,6 +10,7 @@
   .grid .card {
     display: flex;
     flex-direction: row !important;
+    height: 40dvh;
   }
   .grid .card .card-img img {
     width: 100%;
