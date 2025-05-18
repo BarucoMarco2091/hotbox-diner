@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CardapioService, Pastel } from '../services/cardapio.service';
+import { CardapioService } from '../services/cardapio.service';
 import { Observable } from 'rxjs';
 
 interface CardapioItem {
@@ -25,12 +25,6 @@ export class CardapioComponent {
   showAddressWarning = false;
 
   constructor(public cardapioService: CardapioService) { }
-
-  cardapio$!: Observable<Pastel[]>;
-
-  ngOnInit(): void {
-    this.cardapio$ = this.cardapioService.menuItems$;
-  }
 
   get total(): number {
     return this.cart.reduce((acc, item) => acc + item.price * item.quantity, 0);
