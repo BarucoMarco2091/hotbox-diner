@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuService, MenuItem } from '../../services/menu.service';
-
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-admin',
-  templateUrl: './admin.component.html'
+  templateUrl: './admin.component.html',
+  imports: [ FormsModule, CommonModule]
 })
 export class AdminComponent implements OnInit {
   itens: MenuItem[] = [];
