@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { CardapioService } from '../services/cardapio.service';
+import { CardapioService, Pastel } from '../services/cardapio.service';
 import { Observable, Subscribable } from 'rxjs';
 
 interface CardapioItem {
@@ -23,7 +23,7 @@ export class CardapioComponent {
   isModalOpen = false;
   address = '';
   showAddressWarning = false;
-pastels$: Observable<undefined> | Subscribable<undefined> | Promise<undefined> | undefined;
+  pastels$: Observable<Pastel[]> = of([]);
 
   constructor(public cardapioService: CardapioService) { }
 
@@ -76,4 +76,8 @@ pastels$: Observable<undefined> | Subscribable<undefined> | Promise<undefined> |
     this.address = '';
     this.showAddressWarning = false;
   }
+}
+
+function of(arg0: never[]): Observable<Pastel[]> {
+  throw new Error('Function not implemented.');
 }
