@@ -1,31 +1,51 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuService, MenuItem } from '../../services/menu.service';
+import { CardapioService, Pastel } from '../../services/cardapio.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { NgFor } from '@angular/common';
+import { ReactiveFormsModule } from '@angular/forms';
+
 @Component({
   selector: 'app-admin',
   templateUrl: './admin.component.html',
-  imports: [ FormsModule, CommonModule]
+  imports: [ ReactiveFormsModule, NgFor ]
 })
 export class AdminComponent implements OnInit {
-  itens: MenuItem[] = [];
-  novoItem: MenuItem = { nome: '', descricao: '', preco: 0, imagem: '' };
+  itens: Pastel[] = [];
+  form: FormGroup;
+  carregando = false;
 
-  constructor(private menuService: MenuService) {}
+  constructor(
+    private cardapioService: CardapioService,
+    private fb: FormBuilder
+  ) {
+    this.form = this.fb.group({
+      name: ['', Validators.required],
+      description: ['', Validators.required],
+      price: [null, Validators.required],
+      image: ['', Validators.required],
+    });
+  }
 
   ngOnInit() {
-    this.menuService.getItens().subscribe(data => {
-      this.itens = data;
+    this.cardapioService.menuItems.subscribe((dados) => {
+      this.itens = dados;
     });
   }
 
-  adicionar() {
-    this.menuService.addItem(this.novoItem).then(() => {
-      this.novoItem = { nome: '', descricao: '', preco: 0, imagem: '' };
-    });
+  async adicionarItem() {
+    if (this.form.valid) {
+      this.carregando = true;
+      await this.cardapioService.adicionarPastel(this.form.value);
+      this.form.reset();
+      this.carregando = false;
+    }
   }
 
-  remover(id: string) {
-    this.menuService.deleteItem(id);
+  async removerItem(id: string) {
+    this.carregando = true;
+    await this.cardapioService.removerPastel(id);
+    this.carregando = false;
   }
 }

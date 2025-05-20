@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { CardapioService } from '../services/cardapio.service';
-import { Observable } from 'rxjs';
+import { Observable, Subscribable } from 'rxjs';
 
 interface CardapioItem {
   name: string;
@@ -23,6 +23,7 @@ export class CardapioComponent {
   isModalOpen = false;
   address = '';
   showAddressWarning = false;
+pastels$: Observable<undefined> | Subscribable<undefined> | Promise<undefined> | undefined;
 
   constructor(public cardapioService: CardapioService) { }
 

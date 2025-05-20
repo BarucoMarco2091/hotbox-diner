@@ -1,19 +1,26 @@
 <h2>Painel Administrativo</h2>
 
-<section>
-  <input type="text" [(ngModel)]="novoItem.nome" placeholder="Nome">
-  <input type="text" [(ngModel)]="novoItem.descricao" placeholder="Descrição">
-  <input type="number" [(ngModel)]="novoItem.preco" placeholder="Preço">
-  <input type="text" [(ngModel)]="novoItem.imagem" placeholder="Imagem (URL)">
-  <button (click)="adicionar()">Adicionar</button>
-</section>
+<form [formGroup]="form" (ngSubmit)="adicionarItem()" class="formulario">
+  <input type="text" placeholder="Nome" formControlName="name">
+  <input type="text" placeholder="Descrição" formControlName="description">
+  <input type="number" placeholder="Preço" formControlName="price">
+  <input type="text" placeholder="URL da Imagem" formControlName="image">
+  <button type="submit" [disabled]="form.invalid || carregando">
+    {{ carregando ? 'Adicionando...' : 'Adicionar' }}
+  </button>
+</form>
 
 <hr>
 
-<ul>
-  <li *ngFor="let item of itens">
-    <img [src]="item.imagem" width="50">
-    {{ item.nome }} - R$ {{ item.preco }}
-    <button (click)="remover(item.id!)">Remover</button>
-  </li>
-</ul>
+<div *ngFor="let item of itens" class="item">
+  <img [src]="item.image" width="100">
+  <div>
+    <h3>{{ item.name }}</h3>
+    <p>{{ item.description }}</p>
+    <p>R$ {{ item.price }}</p>
+    <button (click)="removerItem(item.id!)" [disabled]="carregando">
+      Remover
+    </button>
+  </div>
+</div>
+
