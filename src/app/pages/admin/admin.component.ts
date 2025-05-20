@@ -1,44 +1,29 @@
-import { Component } from '@angular/core';
-import { AuthService } from '../../services/auth.service';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { CardapioService } from '../../services/cardapio.service';
-
-interface Pastel {
-  name: string;
-  description: string;
-  price: number;
-  image: string;
-}
+import { Component, OnInit } from '@angular/core';
+import { MenuService, MenuItem } from '../../services/menu.service';
 
 @Component({
   selector: 'app-admin',
-  standalone: true,
-  imports: [ CommonModule, FormsModule ],
-  templateUrl: './admin.component.html',
-  styleUrl: './admin.component.scss'
+  templateUrl: './admin.component.html'
 })
-export class AdminComponent {
-  novoPastel: Pastel = {
-    name: '',
-    description: '',
-    price: 0,
-    image: ''
-  }
-  constructor(private auth: AuthService, public cardapioService: CardapioService) {}
+export class AdminComponent implements OnInit {
+  itens: MenuItem[] = [];
+  novoItem: MenuItem = { nome: '', descricao: '', preco: 0, imagem: '' };
 
-  adicionarPastel() {
-    if(this.novoPastel.name && this.novoPastel.price > 0) {
-      this.cardapioService.adicionarPastel({...this.novoPastel});
-      this.novoPastel = { name: '', description: '', price: 0, image: ''};
-    }
+  constructor(private menuService: MenuService) {}
+
+  ngOnInit() {
+    this.menuService.getItens().subscribe(data => {
+      this.itens = data;
+    });
   }
 
-  removerPastel(index: number) {
-    this.cardapioService.removerPastel(index);
+  adicionar() {
+    this.menuService.addItem(this.novoItem).then(() => {
+      this.novoItem = { nome: '', descricao: '', preco: 0, imagem: '' };
+    });
   }
 
-  logout() {
-    this.auth.logout();
+  remover(id: string) {
+    this.menuService.deleteItem(id);
   }
 }
