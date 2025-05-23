@@ -18,7 +18,12 @@ import { AuthService } from "../services/auth.service";
       </form>
       <p *ngIf="erro">{{ erro }}</p>
     </div>
-  `
+  `,
+  styles: [`
+    .login-container { padding: 2rem; max-width: 500px; margin: auto; }
+    .form input { display: block; margin: 0.5rem 0; width: 100%; }
+    .form button { margin-top: 0.5rem; }
+  `]
 })
 
 export class LoginComponent {
