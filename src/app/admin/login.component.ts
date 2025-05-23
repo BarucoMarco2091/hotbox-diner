@@ -20,7 +20,7 @@ import { AuthService } from "../services/auth.service";
     </div>
   `,
   styles: [`
-    .login-container { padding: 2rem; max-width: 500px; margin: auto; }
+    .login-container { padding: 2rem; max-width: 500px; margin: auto; height: 50dvh;}
     .form input { display: block; margin: 0.5rem 0; width: 100%; }
     .form button { margin-top: 0.5rem; }
   `]
