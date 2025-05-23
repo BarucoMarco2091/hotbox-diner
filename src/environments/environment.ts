@@ -1,11 +1,10 @@
 export const environment = {
-  production: false,
-  firebase: {
-    apiKey: 'AIzaSyAzeoyYYpii0Fd1Ie9UQP6mYcz1MXzlADk',
-    authDomain: 'hotbox-diner.firebaseapp.com',
-    projectId: 'hotbox-diner',
-    storageBucket: 'hotbox-diner.firebasestorage.app',
-    messagingSenderId: '997136521452',
-    appId: '1:997136521452:web:63502d23a1aef15d992dc9'
-  }
-};
+    firebase: {
+        apiKey: "AIzaSyDGvbVw77DzGwyYW_XvQbsCYGOqy9X_ZcM",
+        authDomain: "lanchonete-painel.firebaseapp.com",
+        projectId: "lanchonete-painel",
+        storageBucket: "lanchonete-painel.firebasestorage.app",
+        messagingSenderId: "1000705059839",
+        appId: "1:1000705059839:web:020a57fe6f7911bd4f15ca"
+    }
+}

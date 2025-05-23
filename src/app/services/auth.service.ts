@@ -1,34 +1,26 @@
-import { Injectable, Inject, PLATFORM_ID } from '@angular/core';
-import { Router } from '@angular/router';
-import { isPlatformBrowser } from '@angular/common';
+import { Injectable } from "@angular/core";
+import { Auth, signInWithEmailAndPassword, signOut, onAuthStateChanged, User } from '@angular/fire/auth';
+import { Router } from "@angular/router";
+import { BehaviorSubject } from "rxjs";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable({ providedIn: 'root'})
 export class AuthService {
-  private readonly isLoggedInKey = 'isLoggedIn';
-  constructor(private router: Router, @Inject(PLATFORM_ID) private platformId: object) { }
-  login(username: string, password: string): boolean {
-    if(username === 'admin' && password === '1234') {
+    private userSubject = new BehaviorSubject<User | null>(null);
+    user$ = this.userSubject.asObservable();
 
-      if(isPlatformBrowser(this.platformId)) {
-        localStorage.setItem(this.isLoggedInKey, 'true');
-      }
-      return true;
+    constructor(private auth: Auth, private router: Router) {
+        onAuthStateChanged(this.auth, (user) => this.userSubject.next(user));
     }
-    return false;
-  }
 
-  logout(): void {
-    if(isPlatformBrowser(this.platformId)) {
-      localStorage.removeItem(this.isLoggedInKey);
+    login(email: string, password: string) {
+        return signInWithEmailAndPassword(this.auth, email, password);
     }
-  }
 
-  isLoggedIn(): boolean {
-    if(isPlatformBrowser(this.platformId)) {
-      return localStorage.getItem(this.isLoggedInKey) === 'true';
+    logout() {
+        return signOut(this.auth).then(() => this.router.navigate(['/login']));
     }
-    return false;
-  }
+
+    get currentUser() {
+        return this.auth.currentUser;
+    }
 }
